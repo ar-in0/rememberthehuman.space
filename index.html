@@ -26,9 +26,10 @@
         <div class="nav-bar">
           <div class="nav-item"><a href="./about">About</a></div>
           <span class="separator">&#903;</span>
-          <div class="nav-item bracket-item">Texts</div> 
-          <div class="nav-item bracket-item">Audio</div>
-          <div class="nav-item bracket-item">Other</div>
+          <div class="nav-item bracket-item" data-page="all">All</div> 
+          <div class="nav-item bracket-item" data-page="texts">Texts</div> 
+          <div class="nav-item bracket-item" data-page="audio">Audio</div>
+          <div class="nav-item bracket-item" data-page="code">Code</div>
           <span class="separator">&#903;</span>
           <div class="nav-item"><a href="./experiments">Experiments</a></div>
         </div>
@@ -46,6 +47,9 @@
       I'm discovering how to live well.
     </p>
   </div>
+  
+  <div id="dynamic-content"></div>
+
   <div class="star-logos-container">
     <img src="assets/armaan-logo-filled-1-red.svg" width="64" height="64" alt="logo red" class="rotating-logo">
     <img src="./assets/armaan-logo-filled-2.svg" width="64" height="64" alt="logo" class="rotating-logo">

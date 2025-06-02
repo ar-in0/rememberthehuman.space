@@ -68,3 +68,55 @@ document.querySelectorAll('.rotating-logo').forEach(logo => {
     animationFrameId = null;
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Content for each section
+  const sectionContents = {
+    'all': `<div class="bracket-content">
+              <p></p>
+            </div>`,
+    'code': `<div class="bracket-content">
+              <p></p>
+             </div>`
+  };
+
+  function loadSection(page) {
+    // Update active state
+    document.querySelectorAll('.bracket-item').forEach(i => {
+      i.classList.toggle('underlined', i.dataset.page === page);
+    });
+    
+    // Insert/replace dynamic content
+    const container = document.getElementById('dynamic-content');
+    container.innerHTML = sectionContents[page] || '';
+  }
+
+  document.querySelectorAll('.bracket-item[data-page]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      loadSection(this.dataset.page);
+    });
+  });
+
+  // Handle other nav items
+  document.querySelectorAll('.nav-item:not([data-page])').forEach(item => {
+    item.addEventListener('click', function() {
+      document.getElementById('dynamic-content').innerHTML = '';
+      document.querySelectorAll('.bracket-item').forEach(i => {
+        i.classList.remove('underlined');
+      });
+    });
+  });
+
+  // Load 'All' section by default on initial page load
+  const defaultSection = 'all';
+  loadSection(defaultSection);
+  
+  // Optional: Find and highlight the 'All' button in navbar
+  const allButton = document.querySelector('.bracket-item[data-page="all"]');
+  if (allButton) {
+    allButton.classList.add('underlined');
+  }
+  
+});
