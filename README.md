@@ -76,3 +76,8 @@ One idea: connecting to direct power supply runs the fans
 - https://hunter.computer/
 - https://solar.lowtechmagazine.com/
 
+
+
+# Content
+Roll the Dice (Go All the Way) by Charles Bukowski: https://www.youtube.com/watch?v=rnfAVasBkQc (AUD)
+

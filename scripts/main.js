@@ -69,16 +69,26 @@ document.querySelectorAll('.rotating-logo').forEach(logo => {
   });
 });
 
+function makeCard(meta, authors, title, href = '#') {
+  return `
+     <div class="scroll-item"><a href="${href}"</a>
+      <div class="meta">${meta}</div>
+      <div class="authors">${authors}</div>
+      <div class="title">${title}</div>
+    </div>
+  `;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   // Content for each section
   const sectionContents = {
-    'all': `<div class="bracket-content">
-              <p></p>
-            </div>`,
-    'code': `<div class="bracket-content">
-              <p></p>
-             </div>`
+    all: `<div class="bracket-content"><p></p></div>`,
+    code: `<div class="bracket-content"><p></p></div>`,
+    audio: `
+      <div class="scroll-container">
+        ${makeCard("AUD &#903; CURATED", "Chris Williamson and Naval Ravikant", "PODCAST: 44 HARSH TRUTHS TO IMPROVE YOUR LIFE", "https://www.youtube.com/watch?v=KyfUysrNaco")}
+      </div>
+    `
   };
 
   function loadSection(page) {
@@ -118,5 +128,4 @@ document.addEventListener('DOMContentLoaded', function() {
   if (allButton) {
     allButton.classList.add('underlined');
   }
-  
 });

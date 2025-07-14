@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Silkscreen:wght@400;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url("normalize.css");
@@ -8,18 +6,6 @@
     margin: 0;
     padding: 0;
  }
-
-.silkscreen-regular {
-    font-family: "Silkscreen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-  
-.silkscreen-bold {
-    font-family: "Silkscreen", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
 
 .grid {
     position: absolute;
@@ -63,6 +49,19 @@ main {
     overflow: visible;
 }
 
+@media (min-width: 768px) {
+    main {
+      max-width: none;       /* remove max-width constraint */
+      width: 90%; /* full width minus 2rem margin each side */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    main {
+      width: 90%; /* more margin on very wide screens */
+    }
+  }
+
 a {
     text-decoration: none;
 }
@@ -71,7 +70,6 @@ p {
     line-height: 1em;
     margin-top: 0.4em;
     display: block;
-    /* font-family: "JetBrains Mono", monospace; */
     font-family: "Lora";
     font-size: 1rem;
     font-weight: normal;
@@ -214,7 +212,7 @@ h1 a {
     display: flex;
     gap: 12px;
     align-items:baseline;
-    color: rgb(99, 99, 99);
+    color: rgb(70, 70, 70);
 }
 
 .bracket-item {
@@ -227,7 +225,7 @@ h1 a {
 }
 
 .nav-item a {
-    color: rgb(99, 99, 99);
+    color: rgb(70, 70, 70);
     text-decoration: none;
 }
 
@@ -236,7 +234,7 @@ h1 a {
 }
 
 .separator {
-    color: rgb(99, 99, 99);
+    color: rgb(70, 70, 70);
 }
 
 .star-logos-container {
@@ -288,3 +286,67 @@ h1 a {
     display: inline-block;
     color: #555;
   }
+
+
+/* Scrollable Cards */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.6rem;
+    padding: 2rem 0;
+    scroll-padding: 1rem;
+    scrollbar-width: none; /* hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* hide scrollbar for IE 10+ */
+    width: 100%;  /* ensure container stretches full width */
+  }
+  .scroll-container::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+  }
+  
+  .scroll-item {
+    display: block;           /* make entire card clickable */
+    width: 320px;
+    /* padding: 1rem; */
+    border-radius: 8px;
+    font-family: inherit;     /* use the main font of your page */
+    color: inherit;           /* inherit color so normal link color applies */
+    text-decoration: inherit; /* keep underline for links */
+    background: transparent;  /* no background override */
+    cursor: pointer;          /* pointer cursor on hover */
+    /* Remove any custom background, shadow, or colors that block link styles */
+    color: rgb(70, 70, 70);
+    letter-spacing: 0.01em;
+  }
+  
+  .scroll-item a {
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.scroll-item a:hover {
+    color: #D40000;
+}
+
+  .scroll-item .meta {
+    font-size: 0.8rem;
+    font-weight: inherit;
+    
+    text-transform: uppercase;
+    color: rgb(160, 160, 160);
+    /* letter-spacing: 0.05em;
+    margin-bottom: 0.4em; */
+  }
+  
+  .scroll-item .authors {
+    font-size: 1rem;
+    font-weight: 540;
+    margin-bottom: 0.4rem; 
+  }
+  
+  .scroll-item .title {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
