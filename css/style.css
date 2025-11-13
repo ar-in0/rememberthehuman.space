@@ -374,7 +374,7 @@ h1 a {
   }
   
 
-  html {
+html {
     font-size: 85%; /* or 85%, 80% - adjust to match your localhost */
     line-height: 1;
     -webkit-text-size-adjust: 100%;
