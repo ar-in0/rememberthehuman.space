@@ -11,7 +11,6 @@ cd "$(dirname "$0")"
 FILES=(
   index.html
   rt/index.html
-  rk/index.html
   about/index.html
   thoughts/index.html
   _templates/note.html
